@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php echo $this->config->get('siteName'); ?></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Scripts -->
+    <script src="/js/app.js" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="/css/app.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get('img/favicon.ico') ?>"/>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="<?= $this->security->getToken() ?>">
+
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+        <a href="/"><?php echo $this->config->get('siteName'); ?></a></h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <?php
+        if ($this->session->has('auth')) {
+            echo $this->tag->linkTo([
+                    '/home',
+                    'Home',
+                    'class' => 'px-2'
+                ]
+            );
+            echo $this->tag->linkTo([
+                    '/logout',
+                    'Logout',
+                    'class' => 'px-2'
+                ]
+            );
+
+        } else {
+            echo $this->tag->linkTo([
+                    '/login',
+                    'Login',
+                    'class' => 'px-2'
+                ]
+            );
+
+            echo $this->tag->linkTo([
+                    '/register',
+                    'Register',
+                    'class' => 'px-2'
+                ]
+            );
+        }
+        ?>
+    </nav>
+</div>
+
+<div class="container">
+    <?php $this->flash->output() ?>
+
+    <?php echo $this->getContent(); ?>
+</div>
+</body>
+</html>

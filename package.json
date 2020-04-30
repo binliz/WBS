@@ -1,0 +1,28 @@
+{
+  "name": "binliz_test_phalcon_app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "array-unique": "^0.3.2",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.5.0",
+    "lodash": "^4.17.15",
+    "popper.js": "^1.16.1",
+    "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.14.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}

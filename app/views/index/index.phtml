@@ -1,0 +1,39 @@
+<div class="flex-center position-ref full-height">
+    <div class="top-right links">
+        <?php
+        if($this->session->has('auth')){
+            echo $this->tag->linkTo([
+                    '/home',
+                    'Home',
+                ]
+            );
+            echo $this->tag->linkTo([
+                    '/logout',
+                    'Logout'
+                ]
+            );
+
+        }else {
+            echo $this->tag->linkTo([
+                    '/login',
+                    'Login'
+                ]
+            );
+
+            echo $this->tag->linkTo([
+                    '/register',
+                    'Register'
+                ]
+            );
+        }
+        ?>
+
+    </div>
+
+    <div class="content">
+        <div class="title m-b-md">
+            <?php echo $this->config->get('siteName');?>
+        </div>
+
+    </div>
+</div>
